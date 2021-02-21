@@ -18,7 +18,7 @@
         <input type="range" min={MIN_ZOOM} max={MAX_ZOOM} bind:value={$zoom} class="slider" id="zoom" />
     </div>
     <div class="item">
-        <label for="border">Pokaż siatkę</label>
+        <label for="border" id="border-label">Pokaż siatkę:</label>
         <input type="checkbox" id="border" disabled={!$canHaveBorder} bind:checked={$userWantsBordered} />
     </div>
 </div>
@@ -45,6 +45,12 @@
     .item > input {
         display: block;
         cursor: pointer;
+        margin: 0;
+    }
+
+    #border {
+        margin-top: 14px;
+        height: 20px;
     }
 
     button {
@@ -54,5 +60,6 @@
         padding: 8px 12px;
         border-radius: 2px;
         cursor: pointer;
+        margin: 0;
     }
 </style>

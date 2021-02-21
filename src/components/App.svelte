@@ -1,13 +1,16 @@
 <script lang="ts">
 	import Screen from './Screen.svelte';
 	import Controls from './Controls.svelte';
+	import Console from './Console.svelte';
 </script>
 
 <main>
+	<h1>Algorytm blabla</h1>
 	<div class="screen">
 		<Screen />
 	</div>
 	<Controls />
+	<Console />
 </main>
 
 <style>
@@ -20,13 +23,6 @@
 		text-align: center;
 		padding: 1em;
 		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
 	}
 
 	.screen {
