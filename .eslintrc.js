@@ -12,7 +12,7 @@ module.exports = {
     'parserOptions': {
         'ecmaVersion': 12,
         'sourceType': 'module',
-        extraFileExtensions: ['.svelte'],
+        'extraFileExtensions': ['.svelte'],
     },
     'plugins': [
         'svelte3',
@@ -20,7 +20,7 @@ module.exports = {
     ],
     overrides: [
         {
-            files: ['*.svelte'],
+            files: ['**/*.svelte'],
             processor: 'svelte3/svelte3',
         },
     ],

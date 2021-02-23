@@ -1,7 +1,7 @@
 <script lang="ts">
     import { frameBuffer, zoom, isBordered, isEditable, linePoints } from '../store';
 
-    function handleClick(x, y) {
+    function handleClick(x: number, y: number) {
         if (!$isEditable) {
             return;
         }
@@ -12,18 +12,17 @@
 
 <div class="grid">
     {#each $frameBuffer as columns, x}
-        <div class="column"
-             class:column--bordered={$isBordered}
-             class:column--no-borders-inside={!$isBordered}
-        >
+        <div class="column" class:column--bordered={$isBordered} class:column--no-borders-inside={!$isBordered}>
             {#each columns as cell, y}
-                <div style="width: {$zoom}px; height: {$zoom}px; background: {cell};"
-                     class="cell"
-                     class:cell--bordered={$isBordered}
-                     class:cell--clickable={$isEditable}
-                     on:click={() => handleClick(x, y)}
-                     role="button"
-                ></div>
+                <div
+                    style="width: {$zoom}px; height: {$zoom}px; background: {cell};"
+                    class="cell"
+                    class:cell--bordered={$isBordered}
+                    class:cell--clickable={$isEditable}
+                    on:click={() => handleClick(x, y)}
+                    title={`(${x}, ${y})`}
+                    role="button"
+                />
             {/each}
         </div>
     {/each}

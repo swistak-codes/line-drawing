@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { frameBuffer, linePoints, zoom, canHaveBorder, userWantsBordered } from '../store';
+    import { console, frameBuffer, linePoints, zoom, canHaveBorder, userWantsBordered } from '../store';
     import { clearBuffer } from '../helpers/clearBuffer';
     import { MIN_ZOOM, MAX_ZOOM } from '../consts';
 
     function handleClear() {
         $linePoints = [];
+        $console = [];
         $frameBuffer = clearBuffer();
     }
 </script>

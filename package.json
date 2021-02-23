@@ -5,7 +5,9 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "validate": "svelte-check"
+    "validate": "svelte-check",
+    "fix": "npx eslint --fix \"{,!(node_modules|public)/**/}*.{ts,svelte}\"",
+    "format": "npx prettier --write \"{,!(node_modules|public)/**/}*.{ts,svelte}\""
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -16,6 +18,8 @@
     "@typescript-eslint/parser": "^4.15.1",
     "eslint": "^7.20.0",
     "eslint-plugin-svelte3": "^3.1.1",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.1.6",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
